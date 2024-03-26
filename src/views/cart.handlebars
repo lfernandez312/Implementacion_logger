@@ -1,0 +1,77 @@
+<style>
+  .ticket {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #cartItemsTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  #cartItemsTable th,
+  #cartItemsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #cartTotal {
+    font-weight: bold;
+    text-align: right;
+  }
+</style>
+
+<section class="product-section">
+  <br>
+  <center>
+    <h2>Productos en carrito</h2>
+  </center>
+  <div class="container ticket">
+    <table id="cartItemsTable">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Precio Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each cartInfo.products}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.quantity}}</td>
+          <td>u$s {{this.price}}</td>
+          <td>u$s {{this.totalPrice}}</td>
+          <td>
+            <button onclick="removeFromCart('{{this.id}}')">Eliminar del carrito</button>
+          </td>
+        </tr>
+        {{/each}}
+        <tr id="cartTotal">
+          <td colspan="3">Total:</td>
+          <td>u$s {{cartInfo.totalPrice}}</td>
+          <td>
+            <button style="background:red" onclick="finishCart()">Finalizar Compra</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination mt-4">
+    {{#if cartInfo.products.hasNextPage}}
+    <a href="?page={{cartInfo.products.nextPage}}&limit={{cartInfo.products.limit}}" class="btn btn-secondary">Next</a>
+    {{/if}}
+    {{#if cartInfo.products.hasPrevPage}}
+    <a href="?page={{cartInfo.products.prevPage}}&limit={{cartInfo.products.limit}}"
+      class="btn btn-secondary">Previous</a>
+    {{/if}}
+  </div>
+</section>
+<script src="/js/compra.js"></script>
+

@@ -1,0 +1,60 @@
+<br /><br />
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Registro Manual
+        </div>
+        <div class="card-body">
+          <form action="" id="signupForm">
+            <div class="form-group">
+              <label for="first_name">Nombre</label>
+              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Ingrese su nombre"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="last_name">Apellido</label>
+              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Ingrese su nombre"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                placeholder="Ingrese su correo electrónico" required />
+              <small id="emailHelp" class="form-text text-muted">Nunca
+                compartiremos su correo electrónico con nadie más.</small>
+            </div>
+            <div class="form-group">
+              <label for="age">Edad</label>
+              <input type="number" class="form-control" name="age" id="email"
+                placeholder="Ingrese su edad" required />
+            </div>
+            <div class="form-group">
+              <label for="prefijo">Prefijo:</label>
+              <input type="tel" id="prefijo" class="form-control"  name="prefijo" value="+54" readonly />
+            </div>
+            <div class="form-group">
+              <label for="numero">Número:</label>
+              <input type="tel" id="numero" class="form-control"  name="numero" oninput="unificarTelefonos()" placeholder="Ingrese su Telefono" aria-describedby="phoneHelp" />
+               <small id="phoneHelp" class="form-text text-muted">ingresar telefono comenzando con 11</small>
+              <input type="hidden" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="readonlyPassword">Confirmacion Contraseña (solo
+                lectura)</label>
+              <input type="text" class="form-control" id="readonlyPassword" readonly />
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/signup.js"></script>

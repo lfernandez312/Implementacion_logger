@@ -1,0 +1,40 @@
+<br>
+<div class="container mt-5">
+    <h2 class="mb-4">Perfil</h2>
+    <div class="row mb-3">
+        <label for="first_name" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+            <p id="first_name">{{first_name}}</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="last_name" class="col-sm-2 col-form-label">Apellido</label>
+        <div class="col-sm-10">
+            <p id="last_name">{{last_name}}</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="email" class="col-sm-2 col-form-label">Correo</label>
+        <div class="col-sm-10">
+            <p id="email">{{email}}</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="role" class="col-sm-2 col-form-label">Rol</label>
+        <div class="col-sm-10">
+            <p id="role">{{role}}</p>
+        </div>
+    </div>
+    <hr>
+    {{#if isAdmin}}
+    <p>Accesos Admin</p>
+    <a class="nav-link" href="/users/api" target="_blank" class="btn btn-danger">Lista Users</a>
+    <a class="nav-link" href="/tienda/api" target="_blank" class="btn btn-danger">Lista Productos</a>
+    {{/if}}
+    <hr>
+    <button id="logout" class="btn btn-danger">Cerrar Sesión</button>
+</div>
+<script src="/js/profile.js"></script>

@@ -1,0 +1,27 @@
+<!-- Modal -->
+<br><br><div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="chatModalLabel">CoderChat</h5>
+    </div>
+    <div class="modal-body">
+      <div class="input-group">
+        <input type="text" id="chatBox" class="form-control" placeholder="Escribe tu mensaje..."
+          aria-label="Escribe tu mensaje..." aria-describedby="botonEnviarChat">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit" id="botonEnviarChat">Enviar</button>
+        </div>
+      </div>
+      
+      <!-- Agregar el elemento para mostrar usuarios conectados -->
+      <div id="connectedUsers" class="mt-3"></div>
+
+      <div class="card mt-3">
+        <div class="card-body" id="messageLogs"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/chat.js"></script>

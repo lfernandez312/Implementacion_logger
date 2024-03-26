@@ -1,0 +1,30 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="module" src="/js/carrito.js"></script>
+<section class="product-section">
+  <br>
+  <center>
+    <h2>Productos de la categoría: {{category}}</h2>
+  </center>
+  <div class="container">
+    {{#each products}}
+    <div class="product-card col-md-4 mb-4">
+      <h2>{{this.name}}</h2>
+      <p class="description">{{this.description}}</p>
+      <p class="price">{{this.price}} u$s</p>
+      <div class="input-group mb-3">
+        <input type="number" class="form-control quantity-input" value="1" min="1">
+        <button class="add-to-cart-btn btn btn-primary" data-product-id="{{this._id}}">Agregar al carrito</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="pagination mt-4">
+    {{#if products.hasNextPage}}
+    <a href="?page={{products.nextPage}}&limit={{products.limit}}" class="btn btn-secondary">Next</a>
+    {{/if}}
+    {{#if products.hasPrevPage}}
+    <a href="?page={{products.prevPage}}&limit={{products.limit}}" class="btn btn-secondary">Previous</a>
+    {{/if}}
+  </div>
+</section>

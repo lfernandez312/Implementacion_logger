@@ -1,0 +1,49 @@
+{
+  "name": "proyectonode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "SET ENVIRONMENT=dev && nodemon src/app.js",
+    "start:prod": "SET ENVIRONMENT=prod && nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "Fernandez Leonel",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.3",
+    "express-compression": "^1.0.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "fs.promises": "^0.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.0",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-paginate-v2": "^1.8.0",
+    "nodemailer": "^6.9.12",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.7.0",
+    "path": "^0.12.7",
+    "prompt-sync": "^4.2.0",
+    "session-file-store": "^1.5.0",
+    "socket.io": "^4.7.4",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.10.6",
+    "twilio": "^4.23.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
